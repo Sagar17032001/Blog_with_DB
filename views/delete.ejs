@@ -1,0 +1,24 @@
+
+<%- include("partials/header"); -%>
+    <h1>Delete Post</h1>
+    <p> Click on the delete button to delete post from the database. </p>
+
+
+
+
+    <form action="/delete" method="post">
+
+      <%  posts.forEach(function(post){ %>
+
+        <h1><%=post.title%></h1>
+        <%=post.content%>
+        <a href="/posts/<%=post._id%>"></a>
+
+        <button type="submit" name="delete" class="btn btn-danger" value="<%=post._id%>" >Delete</button>
+
+        <% }) %>
+
+    </form>
+
+
+<%- include("partials/footer"); -%>
